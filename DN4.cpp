@@ -13,14 +13,24 @@ int main()
 	cout << ", minute: ";
 	cin >> min;
 
-	double kotu, kotm, kot;
+	/* namesto if zanke pri kotu bi lahko uporabil zanko
+	if(ura>12) {
+		ura -= 12
+	}
+	*/
+	double kotu, kotm, kot; //lahko bi uporabil cela števila
 	
 	kotm = min * 6;
 	kotu = ura * 30; //Če želimo da se za vsako minuto premakne tudi urni kazalec: kotu = ura * 30 + kotm * 0.5; ali kotu = fma(ura, 30, kotm/2);
+	
+	if(kotu > 360) {
+		kotu -= 360
+	}
+	
 	kot = fabs(kotu - kotm); 
 	
 	if (kot > 180) {
-		kot = fabs(360 - kot); //ne vem zakaj ampak brez absolutne vrednosti je včasih kot negativen primer: (18:19)
+		kot = (360 - kot); 
 	}
 
 	cout << "Urni in minutni kazalec ob " << ura << ":" << min << " oklepata kot " << kot << "°." << endl;
