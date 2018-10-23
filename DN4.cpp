@@ -14,9 +14,11 @@ int main()
 	cin >> min;
 
 	/* namesto if zanke pri kotu bi lahko uporabil zanko
+	int ura2;
 	if(ura>12) {
-		ura -= 12
+		ura2 = ura - 12;
 	}
+	potem pri racunanju uporabimo ura2 pri izpisu pa ura
 	*/
 	double kotu, kotm, kot; //lahko bi uporabil cela števila
 	
@@ -24,7 +26,7 @@ int main()
 	kotu = ura * 30; //Če želimo da se za vsako minuto premakne tudi urni kazalec: kotu = ura * 30 + kotm * 0.5; ali kotu = fma(ura, 30, kotm/2);
 	
 	if(kotu > 360) {
-		kotu -= 360
+		kotu -= 360;
 	}
 	
 	kot = fabs(kotu - kotm); 
